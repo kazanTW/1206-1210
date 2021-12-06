@@ -10,14 +10,17 @@ int main(void) {
 
     if (number >= 4) {
         if (number % 2 == 0) {
-            for (int i = 3; i <= (number / 2); ++i) {
-                if (primeCheck(i) == 0) {
-                    continue;
-                }
-                else if (primeCheck(i) == 1) {
-                    if (primeCheck(number - i) == 1) {
-                        if (i != number - i) {
-                            printf("%d+%d\n", i, number - i);
+            if (number == 4) {
+                printf("%d+%d\n", 2, 2);
+            }
+            else {
+                for (int i = 3; i <= (number / 2); ++i) {
+                    if (primeCheck(i) == 0) {
+                        continue;
+                    }
+                    else if (primeCheck(i) == 1) {
+                        if (primeCheck(number - i) == 1) {
+                            printf("%d+%d\n", i, number - i);    
                         }
                     }
                 }
